@@ -58,6 +58,10 @@ function createGreetings(names) {
 // Ex.:
 //   loudLongWords(['apple', 'pear', 'cake', 'pinata']);
 //   => ['APPLE', 'PINATA']
-function loudLongWords(words) {}
+function loudLongWords(words) {
+  const longWords = words.filter((word) => word.length > 4);
+  const upperLongWords = longWords.map((word) => word.toUpperCase());
+  return upperLongWords;
+}
 
 export { addNums, createGreetings, evens, giveMeTwo, loudLongWords, max };
