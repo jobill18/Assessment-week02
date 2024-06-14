@@ -35,7 +35,10 @@ const max = (num1, num2) => {
 // Ex.:
 //   evens([1, 2, 3, 4, 5]);
 //   => [2, 4]
-function evens(nums) {}
+function evens(nums) {
+  const evenNums = nums.filter((num) => num % 2 === 0);
+  return evenNums;
+}
 
 // Given an array of names, return a new array of greetings for each name. Do
 // this using array iteration methods. Do NOT use a for loop.
@@ -43,7 +46,10 @@ function evens(nums) {}
 // Ex.:
 //   createGreetings(['Clive', 'Jill', 'Torgal']);
 //   => ['Hello, Clive!', 'Hello, Jill!', 'Hello, Torgal!']
-function createGreetings(names) {}
+function createGreetings(names) {
+  const greetings = names.map((name) => `Hello, ${name}!`);
+  return greetings;
+}
 
 // Given an array of words, return a new array where each word is uppercased
 // and only includes words that are longer than 4 characters. Do this using
