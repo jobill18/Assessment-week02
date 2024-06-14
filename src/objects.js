@@ -13,7 +13,14 @@
 //     { firstName: 'Karlach', lastName: 'Cliffgate', location: 'Avernus' }
 //   ]);
 //   => ['Gale Dekarios', 'Wyll Ravengard', 'Karlach Cliffgate'];
-function getNames(people) {}
+function getNames(people) {
+  const fullNames = [];
+  for (let i = 0; i < people.length; i++) {
+    let fullName = people[i].firstName + " " + people[i].lastName;
+    fullNames.push(fullName);
+  }
+  return fullNames;
+}
 
 // Given an object representing a person, return their full name (first name and last name).
 // You MUST use object destructuring in your solution.
@@ -24,7 +31,11 @@ function getNames(people) {}
 // Ex.:
 //   getName({ firstName: 'Gale', lastName: 'Dekarios', location: 'Waterdeep' });
 //   => 'Gale Dekarios'
-function getNameUsingDestructuring(person) {}
+function getNameUsingDestructuring(person) {
+  const { firstName, lastName } = person;
+  const fullName = firstName + " " + lastName;
+  return fullName;
+}
 
 // Given an array of objects representing people, return a new array of the
 // people matching the given location.
@@ -43,7 +54,12 @@ function getNameUsingDestructuring(person) {}
 //     { firstName: 'Wyll', lastName: 'Ravengard', location: "Baldur's Gate" },
 //     { firstName: 'Astarion', lastName: 'Ancunin', location: "Baldur's Gate" }
 //   ];
-function getPeopleByLocation(people, location) {}
+function getPeopleByLocation(people, location) {
+  const matchingPeople = people.filter(
+    (person) => person.location === location
+  );
+  return matchingPeople;
+}
 
 // Translate a phrase to pirate talk.
 //
@@ -58,18 +74,18 @@ function getPeopleByLocation(people, location) {}
 //   translateToPirateTalk('excuse me sir where is the restroom');
 //   => 'avast me matey where be the head'
 const EN_PIRATE_LOOKUP = {
-  excuse: 'avast',
-  sir: 'matey',
-  is: 'be',
-  restroom: 'head',
-  student: 'swabbie',
-  friend: 'matey',
-  restaurant: 'galley',
-  your: 'yer',
-  are: 'be',
-  my: 'me',
-  hotel: 'fleabag inn',
-  hello: 'ahoy',
+  excuse: "avast",
+  sir: "matey",
+  is: "be",
+  restroom: "head",
+  student: "swabbie",
+  friend: "matey",
+  restaurant: "galley",
+  your: "yer",
+  are: "be",
+  my: "me",
+  hotel: "fleabag inn",
+  hello: "ahoy",
 };
 
 function translateToPirateTalk(phrase) {}
