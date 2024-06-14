@@ -30,7 +30,14 @@ loginSpan.addEventListener("click", loginBtn);
 // A user should be able to enter what they want the alert to say in the
 // text box. Then, they can submit the form to trigger the alert.
 
-/// TODO: replace this with your code
+let alertBtn = document.querySelector("#send-alert");
+let alertText = document.querySelector("#alert-message");
+
+function alertMessage() {
+  alert(alertText.value);
+}
+
+alertBtn.addEventListener("submit", alertMessage);
 
 // Add an item
 //
@@ -47,7 +54,11 @@ loginSpan.addEventListener("click", loginBtn);
 //     <li>Item</li>  <!-- This was added after double-clicking -->
 //   </ol>
 
-/// TODO: replace this with your code
+let addItemBtn = document.querySelector("#item-adder");
+
+function addItem() {}
+
+addItemBtn.addEventListener("dblclick", addItem);
 
 // Change colors
 //
