@@ -8,7 +8,20 @@
 // update and say "Log out". If a user clicks on the button again, its text
 // should switch from "Log Out" to "Log In".
 
-/// TODO: replace this with your code
+let loginText = "Log in";
+let loginSpan = document.querySelector("#auth");
+
+function loginBtn() {
+  loginSpan.innerText = loginText;
+  if (loginText === "Log in") {
+    loginText = "Log out";
+  } else {
+    loginText = "Log in";
+  }
+  loginSpan.innerText = loginText;
+}
+
+loginSpan.addEventListener("click", loginBtn);
 
 // Send an alert
 //
