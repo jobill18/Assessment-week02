@@ -140,7 +140,17 @@ function wordCount(str) {
 //     }
 //   }, 1);
 //   => true
-function isBugAvailable(bug, month) {}
+function isBugAvailable(bug, month) {
+  const bugID = bug;
+  const { availability } = bugID;
+  const { months } = availability;
+  for (let i = 0; i < months.length; i++) {
+    if (months[i] === month) {
+      return true;
+    }
+  }
+  return false;
+}
 
 // Given an array of objects representing bugs, return an object that'll be
 // used to build a calendar. The keys of the object should be the months of the
