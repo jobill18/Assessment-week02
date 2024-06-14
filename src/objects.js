@@ -193,7 +193,30 @@ function isBugAvailable(bug, month) {
 //     12: [],
 //   }
 
-function buildBugHuntCalendar(bugs) {}
+function buildBugHuntCalendar(bugs) {
+  const bugCalendar = {
+    1: [],
+    2: [],
+    3: [],
+    4: [],
+    5: [],
+    6: [],
+    7: [],
+    8: [],
+    9: [],
+    10: [],
+    11: [],
+    12: [],
+  };
+  for (const bug of bugs) {
+    for (let i = 1; i <= 12; i++) {
+      if (isBugAvailable(bug, i) === true) {
+        bugCalendar[i].push(bug.name);
+      }
+    }
+  }
+  return bugCalendar;
+}
 
 export {
   buildBugHuntCalendar,
