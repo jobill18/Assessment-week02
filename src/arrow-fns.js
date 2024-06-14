@@ -21,7 +21,13 @@ const addNums = (num1, num2) => num1 + num2;
 // Ex.:
 //   max(1, 2);
 //   => 2
-const max = undefined;
+const max = (num1, num2) => {
+  if (num1 > num2) {
+    return num1;
+  } else {
+    return num2;
+  }
+};
 
 // Given an array of numbers, return a new array that only includes the even
 // numbers. Do this using array iteration methods. Do NOT use a for loop.
