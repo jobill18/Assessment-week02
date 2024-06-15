@@ -59,14 +59,12 @@ let itemList = document.querySelector("#list");
 
 function addItem() {
   //   alert("hi");
-  itemList.appendChild(
-    document.createElement("li").appendChild(document.createTextNode("Item"))
-  );
+  const li = document.createElement("li");
+  li.innerText = "Item";
+  itemList.appendChild(li);
 }
 
 addItemBtn.addEventListener("dblclick", addItem);
-
-//_________________MISSING ITEM TEXT______________________//
 
 // Change colors
 //
@@ -140,4 +138,19 @@ calcBtn.addEventListener("submit", factorial);
 // the feedback text to say "The word must be at least 4 characters long." and
 // change the color of the text to red..
 
-/// TODO: replace this with your code
+let validateBtn = document.getElementById("recommend-word");
+
+function validateWord() {
+  let inputText = document.getElementById("word").value;
+  if (inputText.length >= 4) {
+    document.getElementById("form-feedback").innerText =
+      "Thanks for your submission!";
+    document.getElementById("form-feedback").style.color = "blue";
+  } else {
+    document.getElementById("form-feedback").style.color = "blue";
+
+    alert("bad");
+  }
+}
+
+validateBtn.addEventListener("submit", validateWord);
