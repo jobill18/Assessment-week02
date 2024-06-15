@@ -55,10 +55,18 @@ alertBtn.addEventListener("submit", alertMessage);
 //   </ol>
 
 let addItemBtn = document.querySelector("#item-adder");
+let itemList = document.querySelector("#list");
 
-function addItem() {}
+function addItem() {
+  //   alert("hi");
+  itemList.appendChild(
+    document.createElement("li").appendChild(document.createTextNode("Item"))
+  );
+}
 
 addItemBtn.addEventListener("dblclick", addItem);
+
+//_________________MISSING ITEM TEXT______________________//
 
 // Change colors
 //
@@ -69,7 +77,24 @@ addItemBtn.addEventListener("dblclick", addItem);
 // Clicking on "Turn Stuff Red" should make text red and clicking on "Turn
 // Stuff Blue" should make text blue.
 
-/// TODO: replace this with your code
+let blueBtn = document.querySelector("#blue");
+let redBtn = document.querySelector("#red");
+const changeColor = document.getElementById("changes-colors");
+
+function turnBlue() {
+  //   alert("blue");
+  changeColor.style.color = "blue";
+}
+
+function turnRed() {
+  //   alert("red");
+  changeColor.style.color = "red";
+}
+
+blueBtn.addEventListener("click", turnBlue);
+redBtn.addEventListener("click", turnRed);
+
+//__________________________FUNCTION NOT WORKING____________________//
 
 // Calculate factorial
 //
@@ -86,7 +111,19 @@ addItemBtn.addEventListener("dblclick", addItem);
 //   - calls your function that calculates a factorial
 //   - puts the result of the function inside the "result" span
 
-/// TODO: replace this with your code
+let calcBtn = document.getElementById("factorial-calculator");
+
+function factorial() {
+  //   alert("hello");
+  let num = Number(document.getElementById("factorial-input").value);
+  let solution = num;
+  for (let i = num - 1; i > 0; i--) {
+    solution = solution * i;
+  }
+  document.getElementById("result").innerText = solution;
+}
+
+calcBtn.addEventListener("submit", factorial);
 
 // Validate a form
 //
