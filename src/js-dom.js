@@ -78,17 +78,19 @@ addItemBtn.addEventListener("dblclick", addItem);
 let blueBtn = document.querySelector("#blue");
 let redBtn = document.querySelector("#red");
 
-let changeColor = document.getElementsByClassName(`changes-colors`);
+let changeColor = document.querySelectorAll(`.changes-colors`);
+
+console.log(Array.from(changeColor));
 
 function turnBlue() {
   //   alert("blue");
-  changeColor.style.color = "blue";
+  changeColor.forEach((el) => (el.style.color = "blue"));
   //   changeColor.style.setProperty("color", "blue");
 }
 
 function turnRed() {
   //   alert("red");
-  changeColor.style.color = "red";
+  changeColor.forEach((el) => (el.style.color = "red"));
 }
 
 blueBtn.addEventListener("click", turnBlue);
@@ -159,15 +161,18 @@ calcBtn.addEventListener("submit", factorial);
 //   //   return false;
 // }
 
-const validateBtn = document.getElementById("recommend-word");
-const text = document.getElementById("word").value;
-const feedback = document.getElementsByClassName("form-feedback");
+const validateBtn = document.querySelector("#recommend-word");
+const text = document.querySelector("#word");
+const feedback = document.querySelector(".form-feedback");
 
 console.log(text);
 
-function validateForm() {
-  if (text.length >= 4) {
-    feedback.value = "Thanks for your submission!";
+function validateForm(e) {
+  e.preventDefault();
+  console.log(text.value);
+  const inputText = text.value;
+  if (inputText.length >= 4) {
+    feedback.innerHTML = "Thanks for your submission!";
     feedback.style.color = "green";
   } else {
     feedback.value = "The word must be at least 4 characters long.";
