@@ -9,26 +9,28 @@
 
   <body>
     <main>
-      <p>
-        <label for="character-name">Character Name:</label>
-        <input type="text" name="character-name" class="input"/>
-      </p>
-      <p>
-        <label for="jedi">Jedi</label>
-        <input type="radio" name="alignment" id="jedi" class="input"/>
-        <label for="sith">Sith</label>
-        <input type="radio" name="alignment" id="sith" class="input"/>
-      </p>
-      <p>
-        <label for="lightsaber-color">Lightsaber color:</label>
-        <select type="text" id="lightsaber-color" class="input">
-          <option value="blue" id="blue">Blue</option>
-          <option value="green" id="green">Green</option>
-          <option value="red" id = "red">Red</option>
-          <option value="purple" id="purple">Purple</option>
-        </select>
-      </p>
-      <p><button class="input">Submit</button></p>
+      <form>
+        <p>
+          <input type="text" name="character-name" class="input"/>
+          <label for="character-name">Character Name:</label>
+        </p>
+        <p>
+          <input type="radio" value = 'jedi' name="alignment" id="jedi" class="input"/>
+          <label for="jedi">Jedi</label>
+          <input type="radio" value = 'sith' name="alignment" id="sith" class="input"/>
+          <label for="sith">Sith</label>
+        </p>
+        <p>
+          <label for="lightsaber-color">Lightsaber color:</label>
+          <select name = 'lightsaber' type="text" id="lightsaber-color" class="input">
+            <option value="blue" id="blue">Blue</option>
+            <option value="green" id="green">Green</option>
+            <option value="red" id = "red">Red</option>
+            <option value="purple" id="purple">Purple</option>
+          </select>
+        </p>
+        <p><button type = 'submit' class="input">Submit</button></p>
+      </form>
       <p>
         <table>
           <tr>

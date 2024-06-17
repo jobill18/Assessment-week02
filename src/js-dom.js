@@ -77,11 +77,13 @@ addItemBtn.addEventListener("dblclick", addItem);
 
 let blueBtn = document.querySelector("#blue");
 let redBtn = document.querySelector("#red");
-const changeColor = document.getElementById("changes-colors");
+
+let changeColor = document.getElementsByClassName(`changes-colors`);
 
 function turnBlue() {
   //   alert("blue");
   changeColor.style.color = "blue";
+  //   changeColor.style.setProperty("color", "blue");
 }
 
 function turnRed() {
@@ -138,19 +140,40 @@ calcBtn.addEventListener("submit", factorial);
 // the feedback text to say "The word must be at least 4 characters long." and
 // change the color of the text to red..
 
-let validateBtn = document.getElementById("recommend-word");
+// const colorText = document.getElementById("form-feedback");
 
-function validateWord() {
-  let inputText = document.getElementById("word").value;
-  if (inputText.length >= 4) {
-    document.getElementById("form-feedback").innerText =
-      "Thanks for your submission!";
-    document.getElementById("form-feedback").style.color = "blue";
+// function validateWord() {
+//   let inputText = document.getElementById("word").value;
+//   const colorID = document.querySelector(`#${colorText}`);
+
+//   if (inputText.length >= 4) {
+//     document.getElementById("form-feedback").innerText =
+//       "Thanks for your submission!";
+//     // alert(good);
+//     colorID.style.color = "blue";
+//   } else {
+//     colorID.style.color = "red";
+
+//     alert("bad");
+//   }
+//   //   return false;
+// }
+
+const validateBtn = document.getElementById("recommend-word");
+const text = document.getElementById("word").value;
+const feedback = document.getElementsByClassName("form-feedback");
+
+console.log(text);
+
+function validateForm() {
+  if (text.length >= 4) {
+    feedback.value = "Thanks for your submission!";
+    feedback.style.color = "green";
   } else {
-    document.getElementById("form-feedback").style.color = "blue";
-
-    alert("bad");
+    feedback.value = "The word must be at least 4 characters long.";
+    feedback.style.color = "red";
+    return false;
   }
 }
 
-validateBtn.addEventListener("submit", validateWord);
+validateBtn.addEventListener("submit", validateForm);
